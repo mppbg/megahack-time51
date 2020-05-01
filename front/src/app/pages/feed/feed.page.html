@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Feed</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <h2> Welcome to {{ authUser?.name }}</h2>
+  </ion-item>
+  <app-feed-update [loginUser]="authUser"></app-feed-update>
+  <app-feed-card [loginUser]="authUser"></app-feed-card>
+</ion-content>
