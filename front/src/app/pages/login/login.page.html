@@ -1,30 +1,33 @@
-<ion-header>
-  <ion-toolbar color="mango">
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content padding='true'>
-    <div class="center">
-      <img src="assets/images/logo.png" class="smallLogo"/>
-      <h1>Sign In</h1>
+<ion-content>
+  <div class="mainscreen">
+    <div class="logo">
+      <img src="assets/images/logo_size_invert copy.PNG" />
+      <h2>Bem-Vindo</h2>
     </div>
-  <form>
-    <ion-list>
-      <ion-item>
-        <ion-label position="stacked">Username</ion-label>
-        <ion-input autocomplete="off" type="text" name="identifier" [(ngModel)]="postData.identifier"></ion-input>
-      </ion-item>
+    <form>
+      <ion-list class="background-e51b23 form-login">
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input  autocomplete="off" type="text" name="identifier" [(ngModel)]="postData.identifier"></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked">Password</ion-label>
-        <ion-input autocomplete="off" type="password" name="password" [(ngModel)]="postData.password"></ion-input>
-      </ion-item>
-
-      <ion-item lines='none'>
-        <a routerLink='/signup'>Create Account</a>
-      </ion-item>
-    </ion-list>
-    <ion-button expand="block" share="round" color="success" (click)="loginAction()">Login</ion-button>
-  </form>
+        <ion-item>
+          <ion-label position="stacked">Senha</ion-label>
+          <ion-input autocomplete="off" type="password" name="password" [(ngModel)]="postData.password"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="block" color="light" (click)="loginAction()">Entrar</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="block" color="medium" (click)="loginAction()">Registrar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    </form>
+  </div>
 </ion-content>
+
