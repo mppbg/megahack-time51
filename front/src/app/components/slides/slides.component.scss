@@ -1,5 +1,5 @@
 ion-slide {
-  padding: 160px 20px 160px 20px;
+  padding: 100px 20px 60px 20px;
   display: block;
   img {
     width: 100px;
@@ -8,5 +8,12 @@ ion-slide {
   h2 {
     font-size: 36px;
     font-weight: bold;
+  }
+}
+.center{
+  margin-top: 20%;
+  text-align: center;
+  img {
+    width: 70%;
   }
 }
