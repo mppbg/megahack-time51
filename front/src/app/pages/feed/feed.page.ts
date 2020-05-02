@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FeedService } from 'src/app/services/feed.service';
 import { AuthService } from './../../services/auth.service';
 import { ToastService } from './../../services/toast.service';
+import { Feed } from './feed';
 
 @Component({
   selector: 'app-feed',
@@ -10,6 +11,7 @@ import { ToastService } from './../../services/toast.service';
 })
 export class FeedPage implements OnInit {
   public authUser: any;
+  public feeds: Feed[];
 
   postData = {
     user_id: '',
@@ -22,6 +24,7 @@ export class FeedPage implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.feeds = this.feedSerive.getFeeds();
     this.auth.userData$.subscribe((res: any) => {
       this.authUser = res;
       this.feedData();

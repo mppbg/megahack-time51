@@ -38,6 +38,14 @@ export class LoginPage implements OnInit {
   }
 
   loginAction() {
+    this.storageService
+              .store(AuthConstants.AUTH, 
+                {name: "Marcos"})
+              .then(res => {
+                this.router.navigate(['home']);
+              });
+
+    //return;
     if (this.validateInputs()) {
       this.authService.login(this.postData).subscribe(
         (res: any) => {
