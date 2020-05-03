@@ -1,87 +1,98 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeGuard } from '../guards/home.guard';
-import { UserDataResolver } from '../resolvers/user-data.resolver';
-import { HomePage } from './home.page';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { HomeGuard } from "../guards/home.guard";
+import { UserDataResolver } from "../resolvers/user-data.resolver";
+import { HomePage } from "./home.page";
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: "home",
     component: HomePage,
     canActivate: [HomeGuard],
     resolve: {
-      userData: UserDataResolver
+      userData: UserDataResolver,
     },
     children: [
       {
-        path: 'feed',
+        path: "feed",
         children: [
           {
-            path: '',
+            path: "",
             loadChildren: () =>
-              import('../pages/feed/feed.module').then(m => m.FeedPageModule)
-          }
-        ]
+              import("../pages/feed/feed.module").then((m) => m.FeedPageModule),
+          },
+        ],
       },
       {
-        path: 'messages',
+        path: "messages",
         children: [
           {
-            path: '',
+            path: "",
             loadChildren: () =>
-              import('../pages/messages/messages.module').then(
-                m => m.MessagesPageModule
-              )
-          }
-        ]
+              import("../pages/messages/messages.module").then(
+                (m) => m.MessagesPageModule
+              ),
+          },
+        ],
       },
       {
-        path: 'notifications',
+        path: "notifications",
         children: [
           {
-            path: '',
+            path: "",
             loadChildren: () =>
-              import('../pages/notifications/notifications.module').then(
-                m => m.NotificationsPageModule
-              )
-          }
-        ]
+              import("../pages/notifications/notifications.module").then(
+                (m) => m.NotificationsPageModule
+              ),
+          },
+        ],
       },
       {
-        path: 'settings',
+        path: "settings",
         children: [
           {
-            path: '',
+            path: "",
             loadChildren: () =>
-              import('../pages/settings/settings.module').then(
-                m => m.SettingsPageModule
-              )
-          }
-        ]
+              import("../pages/settings/settings.module").then(
+                (m) => m.SettingsPageModule
+              ),
+          },
+        ],
       },
       {
-        path: 'event',
+        path: "event",
         children: [
           {
-            path: '',
+            path: "",
             loadChildren: () =>
-              import('../pages/event/event.module').then(
-                m => m.EventPageModule
-              )
-          }
-        ]
+              import("../pages/event/event.module").then(
+                (m) => m.EventPageModule
+              ),
+          },
+        ],
+      },
+      
+      {
+        path: "live",
+        children: [
+          {
+            path: "",
+            loadChildren: () =>
+              import("../pages/live/live.module").then((m) => m.LivePageModule),
+          },
+        ],
       },
       {
-        path: '',
-        redirectTo: '/home/feed',
-        pathMatch: 'full'
-      }
-    ]
-  }
+        path: "",
+        redirectTo: "/home/feed",
+        pathMatch: "full",
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class HomeRouter {}
