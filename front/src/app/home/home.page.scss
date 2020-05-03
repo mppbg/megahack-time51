@@ -5,16 +5,16 @@ ion-tab-button{
     border-top: 2px solid #000;
 }
 ion-tab-button [aria-selected=true]{
-    --color-selected:#f00;
-    --color	:#f00;
-    --ripple-color	:#f00;
-    border-top: 2px solid #f00;
+    --color-selected:#e51b23 ;
+    --color	:#e51b23 ;
+    --ripple-color	:#e51b23 ;
+    border-top: 2px solid #e51b23 ;
 }
 .coffee{
-    color: #f00;
+    color: #e51b23 ;
     border-top: 2px solid #000;
 }
 ion-tab-button.tab-selected{
-    border-top: 2px solid #f00;
+    border-top: 2px solid #e51b23 ;
     --color	:#000;
 }

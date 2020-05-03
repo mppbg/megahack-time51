@@ -25,6 +25,8 @@
   }
   ion-list{
     margin: 0px 20px;
+    background: #e51b23 !important;
+
   }
   .form-login-button-submit{
     margin: -20px 20px;
@@ -47,3 +49,8 @@
     }
     
   }
+.form-login-new{
+  text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
