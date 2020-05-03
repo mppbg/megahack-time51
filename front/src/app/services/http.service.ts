@@ -18,4 +18,9 @@ export class HttpService {
     this.headers.append('Content-Type', 'application/json');
     return this.http.post(url, data, this.options);
   }
+
+  get(serviceName: string) {
+    const url = environment.apiUrl + serviceName;
+    return this.http.get(url );
+  }
 }

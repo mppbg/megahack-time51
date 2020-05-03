@@ -12,6 +12,8 @@ export class FeedService {
   }
 
   getFeeds(){
+    return this.httpService.get('contents');
+    /*
     return [{
       image: "https://s2.glbimg.com/FBBHqbnK-7d7VoSfeLJkknxvQ7E=/940x523/e.glbimg.com/og/ed/f/original/2020/04/30/xbaiana-acaraje.jpg.pagespeed.ic.eajvh4jls7.jpg",
       title: "Como um dia de folga pode ser proveitoso mesmo na quarentena",
@@ -26,7 +28,7 @@ export class FeedService {
       image: "https://s2.glbimg.com/o75VbAH44vvUDNyllyv8oK6zWHA=/940x523/e.glbimg.com/og/ed/f/original/2020/04/03/o_codigo_bill_gates.jpg",
       title: "Para Bill Gates, estas 2 qualidades separam bons líderes do resto das pessoas",
       description: "O filantropo e fundador da gigante de tecnologia Microsoft falou anteriormente sobre as características que determinam um bom líder. Encontrá-los é especialmente importante neste momento de incerteza para as empresas"
-    }];
+    }];*/
   }
 
   changeFeedData(data: any) {

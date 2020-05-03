@@ -11,7 +11,7 @@ import { Feed } from './feed';
 })
 export class FeedPage implements OnInit {
   public authUser: any;
-  public feeds: Feed[];
+  public feeds: any;
 
   postData = {
     user_id: '',
@@ -24,26 +24,16 @@ export class FeedPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.feeds = this.feedSerive.getFeeds();
-    this.auth.userData$.subscribe((res: any) => {
-      this.authUser = res;
-      this.feedData();
-    });
+    this.feedSerive.getFeeds().subscribe(
+      res  => {
+        this.feeds = res;
+        console.log(this.feeds);
+      }, err => {
+
+      }
+    );
+   
   }
 
-  feedData() {
-    console.log(this.authUser);
-    this.postData.user_id = this.authUser.user_id;
-    this.postData.token = this.authUser.token;
-    if (this.postData.user_id && this.postData.token) {
-      this.feedSerive.feedData(this.postData).subscribe(
-        (res: any) => {
-          this.feedSerive.changeFeedData(res.feedData);
-        },
-        (error: any) => {
-          this.toastService.presentToast('Network Issue.');
-        }
-      );
-    }
-  }
+  
 }
