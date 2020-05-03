@@ -1,33 +1,59 @@
-
 <ion-content>
   <div class="mainscreen">
     <div class="logo">
-      <img src="assets/images/logo_size_invert copy.PNG" />
-      <h2>Bem-Vindo</h2>
+      <img src="assets/images/rebus-logo.png" />
+    </div>
+    <div style="text-align: center;">
+      <label style="font-size: 40px;">Entrar</label>
     </div>
     <form>
       <ion-list class="background-e51b23 form-login">
         <ion-item>
           <ion-label position="stacked">Email</ion-label>
-          <ion-input  autocomplete="off" type="text" name="identifier" [(ngModel)]="postData.identifier"></ion-input>
+          <ion-input
+            autocomplete="off"
+            type="text"
+            name="identifier"
+            [(ngModel)]="postData.identifier"
+          ></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="stacked">Senha</ion-label>
-          <ion-input autocomplete="off" type="password" name="password" [(ngModel)]="postData.password"></ion-input>
+          <ion-input
+            autocomplete="off"
+            type="password"
+            name="password"
+            [(ngModel)]="postData.password"
+          ></ion-input>
         </ion-item>
       </ion-list>
       <ion-grid>
-      <ion-row>
-        <ion-col size="6">
-          <ion-button size="large" expand="block" color="light" (click)="loginAction()">Entrar</ion-button>
-        </ion-col>
-        <ion-col size="6">
-          <ion-button size="large" expand="block" color="dark" (click)="loginAction()">Registrar</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+        <ion-row>
+          <ion-item size="6">
+            <ion-label>Lembrar credenciais</ion-label>
+            <ion-checkbox checked slot="start"></ion-checkbox>
+          </ion-item>
+          <ion-item size="6">
+            <ion-label>Esqueci minha senha</ion-label>
+          </ion-item>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button
+              size="large"
+              expand="block"
+              color="light"
+              (click)="loginAction()"
+              >Entrar</ion-button
+            >
+          </ion-col>
+        </ion-row>
+        <div style="text-align: center;">
+          <ion-label>É novo na plataforma?</ion-label>
+          <strong><ion-label>Cadastre-se</ion-label> </strong>
+        </div>
+      </ion-grid>
     </form>
   </div>
 </ion-content>
-

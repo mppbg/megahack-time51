@@ -10,7 +10,8 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
-  }
+  },  { path: 'event', loadChildren: './pages/event/event.module#EventPageModule' }
+
 ];
 @NgModule({
   imports: [

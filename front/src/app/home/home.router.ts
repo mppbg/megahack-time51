@@ -60,6 +60,18 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'event',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/event/event.module').then(
+                m => m.EventPageModule
+              )
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/home/feed',
         pathMatch: 'full'
