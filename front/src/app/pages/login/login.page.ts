@@ -26,7 +26,6 @@ export class LoginPage implements OnInit {
   ngOnInit() {}
 
   validateInputs() {
-    console.log(this.postData);
     let username = this.postData.identifier.trim();
     let password = this.postData.password.trim();
     return (
@@ -41,24 +40,23 @@ export class LoginPage implements OnInit {
     if (this.validateInputs()) {
       this.authService.login(this.postData).subscribe(
         (res: any) => {
-          if (res.userData) {
-            // Storing the User data.
+          if (res.jwt) {
             this.storageService
-              .store(AuthConstants.AUTH, res.userData)
+              .store(AuthConstants.AUTH, res)
               .then(res => {
                 this.router.navigate(['home']);
               });
           } else {
-            this.toastService.presentToast('Incorrect username and password.');
+            this.toastService.presentToast('Email e senha incorretos!');
           }
         },
         (error: any) => {
-          this.toastService.presentToast('Network Issue.');
+          this.toastService.presentToast('Problemas de rede!');
         }
       );
     } else {
       this.toastService.presentToast(
-        'Please enter email/username or password.'
+        'Por favor, coloque o email e senha corretamente!'
       );
     }
   }
