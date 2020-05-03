@@ -1,0 +1,20 @@
+ion-tab-button{
+    --color-selected:#000;
+    --color	:#555;
+    --ripple-color	:#333;
+    border-top: 2px solid #000;
+}
+ion-tab-button [aria-selected=true]{
+    --color-selected:#f00;
+    --color	:#f00;
+    --ripple-color	:#f00;
+    border-top: 2px solid #f00;
+}
+.coffee{
+    color: #f00;
+    border-top: 2px solid #000;
+}
+ion-tab-button.tab-selected{
+    border-top: 2px solid #f00;
+    --color	:#000;
+}
