@@ -1,3 +1,4 @@
+import { HeaderComponent } from './header/header.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -15,14 +16,16 @@ import { TimeagoComponent } from './timeago/timeago.component';
     FeedCardComponent,
     FeedUpdateComponent,
     TimeagoComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    HeaderComponent
   ],
   exports: [
     SlidesComponent,
     StartButtonComponent,
     FeedCardComponent,
     FeedUpdateComponent,
-    TimeagoComponent
+    TimeagoComponent,
+    HeaderComponent
   ],
   imports: [CommonModule, FormsModule, IonicModule]
 })

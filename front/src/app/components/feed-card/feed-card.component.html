@@ -1,9 +1,14 @@
 <ion-card *ngFor="let feed of feedData; let i = index">
+  <img [src]="feed.image" />
+  <ion-card-header>
+    <ion-card-title>{{feed.title}}</ion-card-title>
+  </ion-card-header>
   <ion-card-content>
-    <button (click)="feedDeleteAction(i, feed.feed_id)" class="right">
+    <!--<button (click)="feedDeleteAction(i, feed.feed_id)" class="right">
       <ion-icon name="trash"></ion-icon>
-    </button>
-    <p [innerHTML]="feed.feed"></p>
-    <app-timeago [created]="feed.created"></app-timeago>
+    </button>-->
+
+    <p [innerHTML]="feed.description"></p>
+    <!--<app-timeago [created]="feed.created"></app-timeago>-->
   </ion-card-content>
 </ion-card>

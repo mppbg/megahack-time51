@@ -9,7 +9,7 @@ import { FeedService } from './../../services/feed.service';
 })
 export class FeedCardComponent implements OnInit {
   @Input() loginUser: any;
-  feedData: any;
+  @Input() feedData: any;
   postData = {
     user_id: '',
     token: '',
@@ -22,9 +22,9 @@ export class FeedCardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.feedSerivce.feedData$.subscribe((res: any) => {
+   /* this.feedSerivce.feedData$.subscribe((res: any) => {
       this.feedData = res;
-    });
+    });*/
   }
 
   feedDeleteAction(msgIndex: number, feed_id: any) {

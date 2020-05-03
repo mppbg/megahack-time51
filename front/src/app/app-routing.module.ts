@@ -10,7 +10,9 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
-  }
+  },  { path: 'event', loadChildren: './pages/event/event.module#EventPageModule' },
+  { path: 'live', loadChildren: './pages/live/live.module#LivePageModule' }
+
 ];
 @NgModule({
   imports: [
